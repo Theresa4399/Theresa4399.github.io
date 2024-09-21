@@ -42,7 +42,9 @@
 		<script>
 			let str=' ';
 			let arrCET6=[];
-			fetch('cet6.txt').then(res=>res.txt()).then(str=>{arrCET6 =  str.split('\r\n') ;
+			fetch('cet6.txt').then(res=>res.text()).then(txt=>{
+		str=txt;
+		arrCET6 =  str.split('\r\n') ;
                  let rand = Math.floor(arrCET6.length * Math.random() ) ;
                  let cetWord = arrCET6[rand] ;
                  let begin = cetWord.indexOf('\t') ;
