@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>my home page</title>
+	</head>
+	
+	<style>
+		*{text-align: center;}
+		html,body{
+			height:99vh;
+			font-size:calc(0.5em+2vw);
+		}
+		p,button{
+			border-style: dashed;
+			border-color: aqua;
+			background-color: azure;
+			margin: 0;
+		
+		}
+		header{
+			height: 25%;
+			background-color: beige;
+		}
+		main{height: 65%;
+			background-color: aquamarine;}
+		footer{height: 10%;
+			background-color: black;
+			color: aliceblue;}
+			
+	</style>
+	<body>
+		<header></header>
+		<p id=word>&nbsp;</p>
+		<p id=pron>&nbsp;</p>
+		<p id=mean>&nbsp;</p>
+		<button id="loadCet">读入单词</button> 
+		 <button id="randWord">随机单词</button> 
+		<main>
+			
+		</main>
+		<footer></footer>
+		<script>
+			let cet6String= '' ; 
+			 let loadCet = select('button#loadCet'); 
+			 let randWord = select('button#randWord'); 
+			 loadCet.onclick = function(){ 
+			 //console.log("按钮有效点击") ; 
+			 fetch('cet6.txt') 
+			 .then(res => res.text()) 
+			 .then(txt => cet6String = txt); 
+			 select('main').textContent ='已读入单词';
+			 } ; 
+			 randWord.onclick = function(){ 
+			 if (cet6String.length == 0){ 
+			 let s = '你要先读入单词！' ; 
+			 select('main').textContent = s ; 
+			 }else{ 
+			 let arr = cet6String.split('\r\n'); 
+			 
+			 let rand = Math.floor(Math.random() * arr.length );  
+			 let str = arr[rand] ; 
+			
+			 let begin = str.indexOf('\t') ; 
+			 let end = str.lastIndexOf('\t') ; 
+			
+			 let en = str.slice(0,begin) ; 
+			 let pr = str.slice(begin+1,end) ; 
+			 let cn = str.slice(end +1) ;  
+			 select('p#word').textContent = en ; 
+			 select('p#pron').textContent = pr ; 
+			 select('p#mean').textContent = cn ;}
+			 };
+			  function select(selector){ 
+			   let dom = document.querySelector(selector) ; 
+			   return dom ; 
+			   } </script>
+	</body>
+</html>
