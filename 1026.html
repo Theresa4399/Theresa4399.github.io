@@ -79,21 +79,21 @@
          }
        }//createCET6 函数结束，结束后，结果Model.CET6数组存放了“单词对象”组成的数据
         //现在在这里，用fetch异步读取三个网上的单词文本
-        fetch('cet6-1.txt')
+        fetch('cet61.txt')
         .then(res => res.text())
         .then(txt => {
                     //  Model.cet6String = txt;
                      Model.CET6 = [] ;
                      createCET6(txt) ;
         }) ;
-        fetch('cet6-2.txt')
+        fetch('cet62.txt')
         .then(res => res.text())
         .then(txt => {                             
                      createCET6(txt) ;
                      UI.log('第二部分单词已经读入系统！');
                   }
         ) ;
-        fetch('cet6-3.txt')
+        fetch('cet63.txt')
         .then(res => res.text())
         .then(txt => {                             
                      createCET6(txt) ;
@@ -124,7 +124,7 @@
     </main>
 
     <footer>
-      江西科技师范大学李健宏2024--2025
+  
     </footer>
     <form id="myForm">
         <p>系统登录和注册窗口</p>
