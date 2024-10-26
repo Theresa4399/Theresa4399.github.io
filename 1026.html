@@ -79,7 +79,7 @@
          }
        }//createCET6 函数结束，结束后，结果Model.CET6数组存放了“单词对象”组成的数据
         //现在在这里，用fetch异步读取三个网上的单词文本
-        fetch('cet6.txt')
+        fetch('cet61.txt')
         .then(res => res.text())
         .then(txt => {
                     //  Model.cet6String = txt;
@@ -228,7 +228,7 @@
        } ;
     select('button#lastWord').onclick = function(){
           let CET6 =  Model.CET6 ;
-              Model.pos = CET6.length -3 ;
+              Model.pos = CET6.length -1 ;
           let word = CET6[Model.pos] ;
           UI.printWord(word);
           UI.log('你选中了最后一个单词');
