@@ -226,7 +226,7 @@
        } ;
     select('button#lastWord').onclick = function(){
           let CET6 =  Model.CET6 ;
-              Model.pos = CET6.length -1 ;
+              Model.pos = CET6.length -2 ;
           let word = CET6[Model.pos] ;
           UI.printWord(word);
           UI.log('你选中了最后一个单词');
@@ -241,7 +241,7 @@
        } ;
        select('button#nextWord').onclick = function(){
           let CET6 =  Model.CET6 ;
-          if(Model.pos === CET6.length - 1 ){
+          if(Model.pos === CET6.length - 2 ){
             Model.pos = 0 ;
           }else{
             Model.pos ++ ;
