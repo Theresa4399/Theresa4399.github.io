@@ -1,7 +1,7 @@
 //Model用于记录程序的数据和运行状态
     let Model = { 
         timerBegin : new Date() ,
-        numOfLearning : 10,
+        numOfLearning : 50,
         learning : [] ,
         learned : []
     } ;
@@ -126,7 +126,7 @@
   UI.footerLog = function(s){
     select('footer').textContent = s ;
     setTimeout(() => {
-        select('footer').textContent = "" ;
+        select('footer').textContent = "江西科技师范大学 王敬权 20223479" ;
     }, 3*1000);
   };
   UI.response = function(s){
@@ -143,7 +143,7 @@
             hard ++ ;
          }
     }
-    let s = Model.user + '的状态: ' +easy +'熟悉/'+ normal +'一般/'+ hard+ '陌生'    ;
+    let s = Model.user + '的状态: ' +easy +'熟悉/'+ normal +'知道/'+ hard+ '陌生'    ;
     select('p#title').textContent = s ;
     setTimeout(()=>{
         select('p#title').textContent = 'CET6-轻轻松松背单词';
