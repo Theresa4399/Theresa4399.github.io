@@ -1,11 +1,14 @@
-   *{
+     *{
+	   text-align: center;
         margin: 0;
         box-sizing: border-box;
         text-align: center;
     }
    body{
+	   height:99vh;
+	   font-size:calc(0.5em+2vw);
      font-size: calc(10px+1vh);
-     height: 98vh ;    
+
      position: relative;
     }
     header{font-size: 2em;
@@ -39,28 +42,12 @@
         font-size: 1.2em;
         color:lightseagreen;
        }
-    form{
-        position: absolute ;
-        width: 90% ;
-        height: 50% ;
-        border: 2px solid gray;
-        left: 5% ;
-        top: 10% ;
-        background-color: antiquewhite;
-        font-size: 1.1em ;
-    }
-    form input{
-        font-size: 1.1em ;
-        width: 6em;
-    }
+   
     form button{
         font-size: 1.3rem ;
         margin-right: 1em;
     }
-    footer{
-        height: 20% ;
-        font-size:1.2em;
-    }
+  
     span#level{
         display: block;
         position: absolute;
@@ -101,3 +88,32 @@
         padding: 5px 10px;
         text-align: center;
     }
+       p,button{
+       	border-style: dashed;
+       	border-color: aqua;
+       	background-color: azure;
+       	margin: 0;
+       }
+       header{
+       	height: 25%;
+       	background-color: aliceblue;
+       }
+       main{height: 65%;
+       	background-color: aquamarine;}
+       footer{height: 10%;
+       	background-color: black;
+       	color: aliceblue;}
+     
+        form{
+            font-size: 1.2em;
+            background-color: azure;
+            position: absolute;
+            width: 90%;
+            height: 80%;
+            left: 5% ;
+            top: 10% ;
+            border: 2px solid black;
+        }
+        form input{
+            font-size: 1.2em;
+        }
